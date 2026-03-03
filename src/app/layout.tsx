@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const poppins = Poppins({
   weight: ["300", "400", "500", "600", "700"],
@@ -10,7 +12,8 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: "Aethonex | Digital Solutions",
-  description: "Transform your startup vision into reality with comprehensive digital solutions.",
+  description:
+    "Transform your startup vision into reality with comprehensive digital solutions.",
 };
 
 export default function RootLayout({
@@ -21,7 +24,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${poppins.className} antialiased`}>
+        <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

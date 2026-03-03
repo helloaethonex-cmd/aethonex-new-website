@@ -2,14 +2,14 @@
 
 @layer base {
   :root {
-    --primary-color: #6C63FF;
-    --secondary-color: #00F5A0;
+    --primary-color: #6c63ff;
+    --secondary-color: #00f5a0;
     --dark-bg: #0b0f1a;
     --dark-bg-alt: #1a1f38;
     --dark-card: rgba(255, 255, 255, 0.05);
     --text-primary: #ffffff;
     --text-secondary: rgba(255, 255, 255, 0.8);
-    --gradient: linear-gradient(135deg, #6C63FF, #00F5A0);
+    --gradient: linear-gradient(135deg, #6c63ff, #00f5a0);
   }
 
   * {
@@ -27,7 +27,7 @@
     color: var(--text-primary);
     line-height: 1.6;
     overflow-x: hidden;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
   }
 }
 
@@ -46,7 +46,6 @@
 }
 
 @keyframes float {
-
   0%,
   100% {
     transform: translateY(0) scale(1);
@@ -68,7 +67,6 @@
 }
 
 @keyframes pulse-glow {
-
   0%,
   100% {
     transform: scale(1);
@@ -82,7 +80,6 @@
 }
 
 @keyframes glowPulse {
-
   0%,
   100% {
     transform: translate(-50%, -50%) scale(1);
@@ -116,7 +113,6 @@
 }
 
 @keyframes drawCircuit {
-
   0%,
   100% {
     stroke-dashoffset: 300;
@@ -128,7 +124,6 @@
 }
 
 @keyframes pulseNode {
-
   0%,
   100% {
     opacity: 0.3;
@@ -142,7 +137,6 @@
 }
 
 @keyframes floatCode {
-
   0%,
   100% {
     transform: translateY(0) rotate(2deg);
@@ -154,7 +148,6 @@
 }
 
 @keyframes floatIcon {
-
   0%,
   100% {
     transform: translateY(0) scale(1);
@@ -168,7 +161,6 @@
 }
 
 @keyframes binaryFade {
-
   0%,
   100% {
     opacity: 0.1;
@@ -180,7 +172,6 @@
 }
 
 @keyframes textGlow {
-
   0%,
   100% {
     filter: drop-shadow(0 0 20px rgba(108, 99, 255, 0.5));
@@ -192,7 +183,6 @@
 }
 
 @keyframes lineExpand {
-
   0%,
   100% {
     width: 80px;
@@ -206,7 +196,6 @@
 }
 
 @keyframes floatShape {
-
   0%,
   100% {
     transform: translate(0, 0) scale(1);
@@ -229,9 +218,22 @@
   }
 }
 
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
 /* ===== ANIMATION CLASSES & COMPONENT STYLES ===== */
 
 @layer components {
+  .animate-marquee {
+    animation: marquee 30s linear infinite;
+  }
+
   .animate-float {
     animation: float 6s ease-in-out infinite;
   }
@@ -403,7 +405,7 @@
 
   /* Gradient text */
   .gradient-text {
-    background: linear-gradient(135deg, #6C63FF, #00F5A0);
+    background: linear-gradient(135deg, #6c63ff, #00f5a0);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -419,14 +421,14 @@
 
   /* Section heading underline */
   .section-heading::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: -10px;
     left: 50%;
     transform: translateX(-50%);
     width: 80px;
     height: 4px;
-    background: linear-gradient(135deg, #6C63FF, #00F5A0);
+    background: linear-gradient(135deg, #6c63ff, #00f5a0);
     border-radius: 2px;
     animation: lineExpand 2.5s ease-in-out infinite;
   }
@@ -445,13 +447,13 @@
 
   /* Nav link hover underline */
   .nav-link::after {
-    content: '';
+    content: "";
     position: absolute;
     width: 0%;
     height: 2px;
     bottom: -5px;
     left: 0;
-    background: linear-gradient(135deg, #6C63FF, #00F5A0);
+    background: linear-gradient(135deg, #6c63ff, #00f5a0);
     transition: width 0.3s ease;
   }
 
@@ -461,13 +463,18 @@
 
   /* Btn shine effect */
   .btn-shine::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.3),
+      transparent
+    );
     transition: left 0.5s ease;
   }
 
@@ -482,13 +489,17 @@
       linear-gradient(90deg, rgba(108, 99, 255, 0.03) 1px, transparent 1px);
     background-size: 50px 50px;
     mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
-    -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+    -webkit-mask-image: radial-gradient(
+      ellipse at center,
+      black 30%,
+      transparent 70%
+    );
   }
 
   /* Circuit SVG */
   .circuit-path {
     fill: none;
-    stroke: #00F5A0;
+    stroke: #00f5a0;
     stroke-width: 2;
     stroke-dasharray: 300;
     stroke-dashoffset: 300;
@@ -496,7 +507,7 @@
   }
 
   .circuit-node {
-    fill: #00F5A0;
+    fill: #00f5a0;
     animation: pulseNode 2s ease-in-out infinite;
   }
 
@@ -527,7 +538,7 @@
 
   /* Contact input focus */
   .contact-input:focus {
-    border-color: #00F5A0 !important;
+    border-color: #00f5a0 !important;
     box-shadow: 0 0 20px rgba(0, 245, 160, 0.2);
   }
 

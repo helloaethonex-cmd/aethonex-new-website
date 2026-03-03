@@ -1,27 +1,23 @@
 "use client";
 
-export default function Hero() {
-  const scrollTo = (id: string) => {
-    const target = document.querySelector(id);
-    if (target) {
-      const offsetTop = (target as HTMLElement).offsetTop - 80;
-      window.scrollTo({ top: offsetTop, behavior: "smooth" });
-    }
-  };
+import Link from "next/link";
 
+export default function Hero() {
   return (
     <section
       id="home"
       className="relative h-screen flex flex-col justify-center items-center text-center px-[10%] overflow-hidden"
       style={{
-        background: "linear-gradient(135deg, #0b0f1a 0%, #1a1f38 50%, #0b0f1a 100%)",
+        background:
+          "linear-gradient(135deg, #0b0f1a 0%, #1a1f38 50%, #0b0f1a 100%)",
       }}
     >
       {/* Radial glow — top left */}
       <div
         className="absolute w-150 h-150 rounded-full pointer-events-none"
         style={{
-          background: "radial-gradient(circle, rgba(108, 99, 255, 0.2), transparent 70%)",
+          background:
+            "radial-gradient(circle, rgba(108, 99, 255, 0.2), transparent 70%)",
           top: "-250px",
           left: "-250px",
           animation: "pulse-glow 8s ease-in-out infinite",
@@ -61,7 +57,12 @@ export default function Hero() {
         {/* Shape 4 – large rounded */}
         <div
           className="absolute w-25 h-25 border-2 border-[#00F5A0] opacity-[0.15] animate-rotate-slow animate-float-slow"
-          style={{ bottom: "15%", right: "20%", borderRadius: "30%", animationDuration: "25s, 8s" }}
+          style={{
+            bottom: "15%",
+            right: "20%",
+            borderRadius: "30%",
+            animationDuration: "25s, 8s",
+          }}
         />
       </div>
 
@@ -72,7 +73,10 @@ export default function Hero() {
           className="absolute w-50 h-50 opacity-20"
           style={{ top: "10%", left: "5%" }}
         >
-          <path className="circuit-path" d="M10,100 L50,100 L70,50 L120,50 L140,100 L190,100" />
+          <path
+            className="circuit-path"
+            d="M10,100 L50,100 L70,50 L120,50 L140,100 L190,100"
+          />
           <circle className="circuit-node" cx="50" cy="100" r="4" />
           <circle className="circuit-node" cx="120" cy="50" r="4" />
           <circle className="circuit-node" cx="140" cy="100" r="4" />
@@ -82,7 +86,10 @@ export default function Hero() {
           className="absolute w-50 h-50 opacity-20"
           style={{ bottom: "15%", right: "8%" }}
         >
-          <path className="circuit-path" d="M10,50 L60,50 L80,100 L130,100 L150,150 L190,150" />
+          <path
+            className="circuit-path"
+            d="M10,50 L60,50 L80,100 L130,100 L150,150 L190,150"
+          />
           <circle className="circuit-node" cx="80" cy="100" r="4" />
           <circle className="circuit-node" cx="150" cy="150" r="4" />
         </svg>
@@ -126,7 +133,11 @@ export default function Hero() {
           <span
             key={i}
             className={`absolute font-mono font-bold text-[0.9rem] text-[#6C63FF] opacity-[0.15] animate-particle tech-${i + 1}`}
-            style={{ animationName: "floatIcon", animationDuration: "8s", animationDelay: `${i}s` }}
+            style={{
+              animationName: "floatIcon",
+              animationDuration: "8s",
+              animationDelay: `${i}s`,
+            }}
           >
             {icon}
           </span>
@@ -136,7 +147,9 @@ export default function Hero() {
       {/* Binary */}
       <div className="absolute bottom-[8%] left-[3%] flex flex-col gap-1.25 font-mono text-[0.7rem] text-[#00F5A0] pointer-events-none">
         {["01001010", "10110101", "01100110", "10011001"].map((bin, i) => (
-          <span key={i} className={`binary-${i + 1}`}>{bin}</span>
+          <span key={i} className={`binary-${i + 1}`}>
+            {bin}
+          </span>
         ))}
       </div>
 
@@ -155,7 +168,8 @@ export default function Hero() {
         <h1
           className="text-[2.5rem] sm:text-[3rem] lg:text-[4rem] font-bold mb-6 leading-[1.2]"
           style={{
-            background: "linear-gradient(135deg, #fff 0%, #e0e0e0 50%, #fff 100%)",
+            background:
+              "linear-gradient(135deg, #fff 0%, #e0e0e0 50%, #fff 100%)",
             WebkitBackgroundClip: "text",
             backgroundClip: "text",
             color: "transparent",
@@ -172,49 +186,60 @@ export default function Hero() {
           className="text-[1rem] sm:text-[1.25rem] text-white/80 max-w-162.5 mb-10 leading-[1.8]"
           style={{ animation: "fadeInUp 1s ease" }}
         >
-          Transform your startup vision into reality with comprehensive digital solutions.
-          From design to deployment, we deliver excellence at every stage.
+          Transform your startup vision into reality with comprehensive digital
+          solutions. From design to deployment, we deliver excellence at every
+          stage.
         </p>
 
-        <div className="flex gap-5 flex-wrap justify-center" style={{ animation: "fadeInUp 1.2s ease" }}>
-          <button
-            onClick={() => scrollTo("#services")}
-            className="relative overflow-hidden w-40 h-10 rounded-full font-semibold text-base text-white transition-all duration-300 btn-shine cursor-pointer"
+        <div
+          className="flex gap-5 flex-wrap justify-center"
+          style={{ animation: "fadeInUp 1.2s ease" }}
+        >
+          <Link
+            href="/services"
+            className="flex items-center justify-center relative overflow-hidden w-40 h-10 rounded-full font-semibold text-base text-white transition-all duration-300 btn-shine cursor-pointer"
             style={{
               background: "linear-gradient(135deg, #6C63FF, #00F5A0)",
               boxShadow: "0 4px 25px rgba(108, 99, 255, 0.4)",
             }}
             onMouseEnter={(e) => {
-              (e.currentTarget as HTMLButtonElement).style.transform = "translateY(-3px) scale(1.02)";
-              (e.currentTarget as HTMLButtonElement).style.boxShadow = "0 8px 35px rgba(0, 245, 160, 0.5)";
+              (e.currentTarget as HTMLAnchorElement).style.transform =
+                "translateY(-3px) scale(1.02)";
+              (e.currentTarget as HTMLAnchorElement).style.boxShadow =
+                "0 8px 35px rgba(0, 245, 160, 0.5)";
             }}
             onMouseLeave={(e) => {
-              (e.currentTarget as HTMLButtonElement).style.transform = "";
-              (e.currentTarget as HTMLButtonElement).style.boxShadow = "0 4px 25px rgba(108, 99, 255, 0.4)";
+              (e.currentTarget as HTMLAnchorElement).style.transform = "";
+              (e.currentTarget as HTMLAnchorElement).style.boxShadow =
+                "0 4px 25px rgba(108, 99, 255, 0.4)";
             }}
           >
             Explore Services
-          </button>
-          <button
-            onClick={() => scrollTo("#about")}
-            className="w-40 h-10 rounded-full font-semibold text-base text-white bg-transparent transition-all duration-300 cursor-pointer hover:text-[#00F5A0]"
+          </Link>
+          <Link
+            href="/about"
+            className="flex items-center justify-center w-40 h-10 rounded-full font-semibold text-base text-white bg-transparent transition-all duration-300 cursor-pointer hover:text-[#00F5A0]"
             style={{
               border: "2px solid rgba(255, 255, 255, 0.3)",
               backdropFilter: "blur(10px)",
             }}
             onMouseEnter={(e) => {
-              (e.currentTarget as HTMLButtonElement).style.borderColor = "#00F5A0";
-              (e.currentTarget as HTMLButtonElement).style.transform = "translateY(-3px)";
-              (e.currentTarget as HTMLButtonElement).style.boxShadow = "0 8px 25px rgba(0, 245, 160, 0.2)";
+              (e.currentTarget as HTMLAnchorElement).style.borderColor =
+                "#00F5A0";
+              (e.currentTarget as HTMLAnchorElement).style.transform =
+                "translateY(-3px)";
+              (e.currentTarget as HTMLAnchorElement).style.boxShadow =
+                "0 8px 25px rgba(0, 245, 160, 0.2)";
             }}
             onMouseLeave={(e) => {
-              (e.currentTarget as HTMLButtonElement).style.borderColor = "rgba(255,255,255,0.3)";
-              (e.currentTarget as HTMLButtonElement).style.transform = "";
-              (e.currentTarget as HTMLButtonElement).style.boxShadow = "";
+              (e.currentTarget as HTMLAnchorElement).style.borderColor =
+                "rgba(255,255,255,0.3)";
+              (e.currentTarget as HTMLAnchorElement).style.transform = "";
+              (e.currentTarget as HTMLAnchorElement).style.boxShadow = "";
             }}
           >
             Learn More
-          </button>
+          </Link>
         </div>
       </div>
 
@@ -222,7 +247,8 @@ export default function Hero() {
       <div
         className="absolute w-125 h-125 pointer-events-none animate-glow-pulse"
         style={{
-          background: "radial-gradient(circle, rgba(0, 245, 160, 0.08), transparent 70%)",
+          background:
+            "radial-gradient(circle, rgba(0, 245, 160, 0.08), transparent 70%)",
           top: "50%",
           left: "50%",
           transform: "translate(-50%, -50%)",
@@ -233,7 +259,8 @@ export default function Hero() {
       <div
         className="absolute w-125 h-125 rounded-full pointer-events-none"
         style={{
-          background: "radial-gradient(circle, rgba(0, 245, 160, 0.15), transparent 70%)",
+          background:
+            "radial-gradient(circle, rgba(0, 245, 160, 0.15), transparent 70%)",
           bottom: "-200px",
           right: "-200px",
           animation: "pulse-glow 6s ease-in-out infinite reverse",
