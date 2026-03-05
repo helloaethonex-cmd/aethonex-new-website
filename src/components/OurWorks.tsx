@@ -19,13 +19,6 @@ const works = [
     github: "https://github.com/kumarpritam1468/stock-market-site",
   },
   {
-    name: "Twitter-Clone",
-    desc: "A Full stack twitter clone with image, text posting, likes, comments, profile viewing, follow/unfollow etc all features...(As hosted free it takes 50 secs to load at first)",
-    image: "/works/twitter.png",
-    link: "https://twitter-clone-wowx.onrender.com",
-    github: "https://github.com/kumarpritam1468/twitter-clone",
-  },
-  {
     name: "Chat-Zing",
     desc: "A fully working MERN stack Chat Application with real time messaging, unique profile pic, online status, cookie authentication and a beautiful UI(As hosted free it takes 50 secs to load at first)",
     image: "/works/chat-zing.png",
@@ -34,7 +27,7 @@ const works = [
   },
   {
     name: "MERN portfolio",
-    desc: "My previous MERN stack portfolio with jwt verification, admin panel & crud operations",
+    desc: "MERN stack portfolio with jwt verification, admin panel & crud operations",
     image: "/works/portfolio.png",
     link: "https://pritam-kumar-portfolio.vercel.app",
     github: "https://github.com/kumarpritam1468/MERN-portfolio",
