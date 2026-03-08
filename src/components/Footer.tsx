@@ -41,8 +41,8 @@ export default function Footer() {
         <div className="flex gap-5 mt-2">
           {[
             { label: "in", href: "https://www.linkedin.com/in/aethonex-undefined-0422163b1/", ariaLabel: "LinkedIn" },
-            { label: "𝕏", href: "#", ariaLabel: "Twitter" },
-            { label: "GH", href: "#", ariaLabel: "GitHub" },
+            // { label: "𝕏", href: "#", ariaLabel: "Twitter" },
+            // { label: "GH", href: "#", ariaLabel: "GitHub" },
           ].map((social) => (
             <a
               key={social.ariaLabel}
@@ -50,7 +50,7 @@ export default function Footer() {
               target={social.href !== "#" ? "_blank" : undefined}
               rel="noreferrer"
               aria-label={social.ariaLabel}
-              className="w-10 h-10 flex items-center justify-center rounded-full font-semibold text-white no-underline transition-all duration-300 hover:-translate-y-[3px]"
+              className="w-10 h-10 flex items-center justify-center rounded-full font-semibold text-white no-underline transition-all duration-300 hover:-translate-y-0.75"
               style={{ background: "rgba(255, 255, 255, 0.05)" }}
               onMouseEnter={(e) => {
                 (e.currentTarget as HTMLAnchorElement).style.background =
