@@ -40,7 +40,7 @@ export default function Footer() {
         {/* Social Links */}
         <div className="flex gap-5 mt-2">
           {[
-            { label: "in", href: "https://www.linkedin.com/in/aethonex-undefined-0422163b1/", ariaLabel: "LinkedIn" },
+            { label: "in", href: "https://www.linkedin.com/in/aethonex-0422163b1/", ariaLabel: "LinkedIn" },
             // { label: "𝕏", href: "#", ariaLabel: "Twitter" },
             // { label: "GH", href: "#", ariaLabel: "GitHub" },
           ].map((social) => (
